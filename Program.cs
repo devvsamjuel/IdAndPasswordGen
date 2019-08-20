@@ -3,8 +3,8 @@ using System;
 namespace PasswordGenerator
 {
     public class Program
-    {
-        static string generatePassword()
+    {   
+        static string generatePassword()    //method for generating Password
         {
             var seed = (int)DateTime.Now.Ticks;
             var randomObject = new Random(seed+3);
@@ -17,7 +17,7 @@ namespace PasswordGenerator
             var password =String.Join("",passwordArray);
             return password;
         }
-        static string generateID()
+        static string generateID()  //method for generating ID with different seed value
         {
             var seed = (int)DateTime.Now.Ticks;
             var randomObject = new Random(seed+5);
@@ -29,12 +29,12 @@ namespace PasswordGenerator
             var id = String.Join("", idArray);
             return id;
         }
-        static string[] getIdAndPassword()
+        static string[] getIdAndPassword() //combines the id and password in a single array for simplicity
         {
             var idAndPassword = new string[2] { generateID(), generatePassword() };
             return idAndPassword;
         }
-        static void displayIdAndPassword()
+        static void displayIdAndPassword()  //displays ID and Password
         {
             var newIdAndPassword = getIdAndPassword();
             Console.WriteLine($"New ID:{newIdAndPassword[0]}   New Password:{newIdAndPassword[1]}");
