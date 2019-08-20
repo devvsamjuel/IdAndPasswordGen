@@ -8,25 +8,27 @@ namespace PasswordGenerator
         {
             var seed = (int)DateTime.Now.Ticks;
             var randomObject = new Random(seed+3);
-            var passwordArray = new char[10];
-            for (var i = 0; i < 10; i++)
+            const int passwordLength= 10; 
+            var passwordArray = new char[passwordLength];
+            for (var i = 0; i < passwordLength; i++)
             {
                 passwordArray[i] = (char)('a'+ randomObject.Next(0, 26));
                 //Console.Write($"ID{Char.ToString(randomChar)}");
             }
-            var password =String.Join("",passwordArray);
+            var password =String.Join("",passwordArray);    //or...var password = new String(passwordArray);
             return password;
         }
         static string generateID()  //method for generating ID with different seed value
         {
             var seed = (int)DateTime.Now.Ticks;
             var randomObject = new Random(seed+5);
-            var idArray = new char[4];
-            for (var i = 0; i < 4; i++)
+            const int idLength= 10; 
+            var idArray = new char[idLength];
+            for (var i = 0; i < idLength; i++)
             {
                 idArray[i] = (char)('a' + randomObject.Next(0, 26));
             }
-            var id = String.Join("", idArray);
+            var id = String.Join("", idArray);  //or...var id = new String(idArray);
             return id;
         }
         static string[] getIdAndPassword() //combines the id and password in a single array for simplicity
