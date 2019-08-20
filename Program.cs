@@ -7,7 +7,7 @@ namespace PasswordGenerator
         static string generatePassword()
         {
             var seed = (int)DateTime.Now.Ticks;
-            var randomObject = new Random(seed);
+            var randomObject = new Random(seed+3);
             var passwordArray = new char[10];
             for (var i = 0; i < 10; i++)
             {
@@ -20,7 +20,7 @@ namespace PasswordGenerator
         static string generateID()
         {
             var seed = (int)DateTime.Now.Ticks;
-            var randomObject = new Random(seed);
+            var randomObject = new Random(seed+5);
             var idArray = new char[4];
             for (var i = 0; i < 4; i++)
             {
